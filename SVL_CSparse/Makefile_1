@@ -1,0 +1,25 @@
+# >> gcc  -Wall   -o      out    C_Code_SVL_Mar_11_2015_CSparse.c -lcsparse -lfftw3 -lm 
+#   (CC) (CFLAGS) -o (EXECUTABLE)           (SOURCE)                   (LFLAGS)
+# Compiler (CC): gcc for C program,
+# Compiler flags (CFLAGS):
+#      -g    adds debugging information to the executable file
+#      -Wall turns on most, but not all, compiler warnings
+# Define any libraries to link into executable (LFLAGS):
+# Define the C source files (SOURCE):
+#       SOURCE = myprog
+# Build OUTPUT executable (EXECUTABLE):
+#       EXECUTABLE = output name
+
+CC         := gcc  
+CFLAGS     := -Wall
+LFLAGS    := -lcsparse -lfftw3 -lm
+SOURCE     := C_Code_SVL_Mar_11_2015_CSparse.c
+OBJECT     := $(SOURCE:.c=.o)   #C_Code_SVL_Mar_11_2015_CSparse.o
+EXECUTABLE := out
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECT)
+	       $(CC) $(CFLAGS) $(OBJECT) -o $(EXECUTABLE) $(LFLAGS)
+clean:
+	rm -rf $(OBJECTS) $(EXECUTABLE) data*

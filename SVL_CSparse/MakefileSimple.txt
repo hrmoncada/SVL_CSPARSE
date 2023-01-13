@@ -1,0 +1,36 @@
+# This is a simple makefile that compiles multiple C++ source files
+
+# set the names here to be the names of your source files with the
+# .cxx or .cpp replaced by .o
+# Be *** SURE *** to put the .o files here rather than the source files
+
+Objects =  midC.o textline.o
+
+#------------ no need to change between these lines -------------------
+CFLAGS = -g -Wall
+.SUFFIXES: .cxx .cpp
+
+.cxx.o:
+	g++ $(CFLAGS) -c $<
+
+.cpp.o:
+	g++ $(CFLAGS) -c $<
+#------------ no need to change between these lines -------------------
+
+
+#------------ targets --------------------------------------------
+# describe how to create the target
+
+a.out: $(Objects)
+	g++ $(CFLAGS) $(Objects) -o a.out 
+
+clean:
+	rm -f $(Objects) a.out
+
+
+#------------ dependencies --------------------------------------------
+# put the .o that depends on a .h, then colon, then TAB, then the .h
+
+textline.o: textline.h
+
+midC.o: textline.h

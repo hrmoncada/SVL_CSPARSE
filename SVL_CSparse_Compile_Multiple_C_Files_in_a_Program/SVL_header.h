@@ -1,0 +1,15 @@
+extern double **CREAT_MATRIX();
+extern void SVL_TRIANGLE();
+extern void SVL_FFTW ();
+extern void SVL_IFFTW ();
+extern void SVL_SWAPQUADRANTS ();
+extern void SVL_ORIENTATION_FUNCTION ();
+extern void Cart2Pol();
+extern void Pol2Cart();
+extern void PRINT_1D_ARRAY_2D();
+extern void PRINT_2D_ARRAY_2D();
+extern double **CREAT_MATRIX_COMPLEX();
+extern void SVL_TRUNCATE_FFTW_SPATIAL_HARMONIC ();
+extern void SVL_GRADING_VECTOR ();
+extern void SVL_FDDER();
+extern void SVL_LOOP ();
